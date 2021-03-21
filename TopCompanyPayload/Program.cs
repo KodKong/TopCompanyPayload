@@ -15,11 +15,13 @@ namespace TopCompanyPayload
             string name = Console.ReadLine();
             string position = Console.ReadLine();
             int hours = 0; 
-            decimal moneyOnHour = 0;
-            Employees st1 = new Employees(name, position, hours, moneyOnHour);
+            decimal paymentPerHour = 0;
+            decimal salary = 0; 
+           Director st1 = new Director(position, name, hours, paymentPerHour, salary);
             st1.AddInDataBase(st1);
             Console.ReadLine();
-            st1.GetListEmp(); 
+            st1.GetListEmp();
+            st1.AddHour(st1); 
         }
     }
 }
