@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace TopCompanyPayload
 {
-    class Program
+    public class Emloyee : Staff
     {
-        static void Main(string[] args)
+        public Emloyee(string name, List<TimeRecord> timeRecords) : base(name, 120000, timeRecords)
         {
-           
+          
         }
     }
 }
