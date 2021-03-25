@@ -22,7 +22,5 @@ namespace TopCompanyPayload
             Message = message; 
         }
 
-
-
     }
 }
