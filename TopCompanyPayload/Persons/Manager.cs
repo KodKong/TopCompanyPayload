@@ -33,7 +33,31 @@ namespace TopCompanyPayload
             }
         }
 
+        public Manager AddManager (string name)
+        {
+            List<TimeRecord> startTime = new List<TimeRecord>();
+            Manager newWorker = new Manager(name, startTime);
+            return newWorker; 
+        }
 
-       
+        public Emloyee AddEmloyee(string name)
+        {
+            List<TimeRecord> startTime = new List<TimeRecord>();
+            Emloyee newWorker = new Emloyee(name, startTime);
+            return newWorker;
+        }
+
+        public Freelancer AddFreelancer(string name)
+        {
+            List<TimeRecord> startTime = new List<TimeRecord>();
+            Freelancer newWorker = new Freelancer(name, startTime);
+            return newWorker;
+        }
+
+        public void AddTimeWork(Person worker, DateTime startTime, byte hours, string message)
+        {
+            TimeRecord obj = new TimeRecord(startTime, worker.Name, hours, message);
+            worker.TimeRecord.Add(obj); 
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TopCompanyPayload
 {
-    class Freelancer : Person
+    public class Freelancer : Person
     {
         public decimal TotalPay {get; }
 
