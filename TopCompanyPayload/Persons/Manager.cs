@@ -6,6 +6,14 @@ using System.Threading.Tasks;
 
 namespace TopCompanyPayload
 {
+    enum Operations : byte
+    {
+        addHours = 1,
+        addManager = 2,
+        addFreelancer = 3,
+        addEmloyee = 4
+    }
+
     public class Manager : Staff
     {
         public decimal MonthBonus => 20000;

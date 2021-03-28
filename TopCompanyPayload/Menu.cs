@@ -7,7 +7,8 @@ using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace TopCompanyPayload
-{
+{   
+
     public static class Menu
     {
 
@@ -19,10 +20,10 @@ namespace TopCompanyPayload
         }
 
 
-        static bool Authorization (string name)
+        public static bool Authorization (string name)
         {
-            List<Person> employee = GetList(); 
-            foreach(Person item in employee)
+            List<Person> employees = GetList(); 
+            foreach(Person item in employees)
             {
                 if (name == item.Name)
                 {
@@ -30,6 +31,14 @@ namespace TopCompanyPayload
                 }
             }
             return false; 
+        }
+
+        public static void WriteWorker (Person worker)
+        {
+            string jsonString = JsonSerializer.Serialize<Person>(worker);
+            string path = @"C:\Users\ADMIN\Desktop\Зарплаты\Список_Сотрудников.txt";
+            using (StreamWriter stream = new StreamWriter(path, true))
+                stream.WriteLine(jsonString);
         }
     }
 }

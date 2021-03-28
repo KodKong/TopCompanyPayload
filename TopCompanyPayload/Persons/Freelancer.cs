@@ -13,14 +13,15 @@ namespace TopCompanyPayload
         public Freelancer(string name, List<TimeRecord> timeRecords) : base(name, timeRecords)
         {
             decimal payPerHours = 1000;
-            decimal totalPay = 0; 
+            decimal totalPay = 0;
 
-            foreach(var timeRecord in timeRecords)
+            foreach (var timeRecord in timeRecords)
             {
-                totalPay += payPerHours * timeRecord.Hours; 
+                totalPay += payPerHours * timeRecord.Hours;
             }
 
-            TotalPay = totalPay; 
+            TotalPay = totalPay;
         }
+
     }
 }
